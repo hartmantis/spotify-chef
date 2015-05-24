@@ -18,7 +18,8 @@ RSpec.configure do |c|
     metadata.from_file(File.expand_path('../../metadata.rb', __FILE__))
     link_path = File.join(COOKBOOK_PATH, metadata.name)
     FileUtils.ln_s(File.expand_path('../..', __FILE__), link_path)
-    c.cookbook_path = COOKBOOK_PATH
+    c.cookbook_path = [COOKBOOK_PATH,
+                       File.expand_path('../support/cookbooks', __FILE__)]
   end
 
   c.after(:suite) { FileUtils.rm_r(COOKBOOK_PATH) }

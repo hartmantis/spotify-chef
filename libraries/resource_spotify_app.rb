@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: spotify
-# Recipe:: default
+# Library:: spotify_app
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,6 +18,25 @@
 # limitations under the License.
 #
 
-spotify_app 'default' do
-  action :install
+require 'chef/resource/lwrp_base'
+
+class Chef
+  class Resource
+    # A Chef resource for the Spotify app.
+    #
+    # @author Jonathan Hartman <j@p4nt5.com>
+    class SpotifyApp < Resource::LWRPBase
+      self.resource_name = :spotify_app
+      actions :install, :remove
+      default_action :install
+
+      #
+      # Attribute for the app's installed status.
+      #
+      attribute :installed,
+                kind_of: [NilClass, TrueClass, FalseClass],
+                default: nil
+      alias_method :installed?, :installed
+    end
+  end
 end

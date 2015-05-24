@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: spotify
-# Recipe:: default
+# Library:: matchers
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -18,6 +18,12 @@
 # limitations under the License.
 #
 
-spotify_app 'default' do
-  action :install
+if defined?(ChefSpec)
+  ChefSpec.define_matcher(:spotify_app)
+
+  [:install, :remove].each do |a|
+    define_method("#{a}_spotify_app") do |name|
+      ChefSpec::Matchers::ResourceMatcher.new(:spotify_app, a, name)
+    end
+  end
 end

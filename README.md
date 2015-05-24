@@ -10,65 +10,62 @@ Spotify Cookbook
 [codeclimate]: https://codeclimate.com/github/RoboticCheese/spotify-chef
 [coveralls]: https://coveralls.io/r/RoboticCheese/spotify-chef
 
-TODO: Enter the cookbook description here.
+A Chef cookbook for Spotify.
 
 Requirements
 ============
 
-TODO: Describe cookbook dependencies.
+This cookbook currently supports OS X only.
 
 Usage
 =====
 
-TODO: Describe how to use the cookbook.
+Either add the default recipe to your run_list, or implement the resource
+directly in a recipe of your own.
 
 Recipes
 =======
 
 ***default***
 
-TODO: Describe each component recipe.
-
-Attributes
-==========
-
-***default***
-
-TODO: Describe any noteworthy attributes.
+Installs Spotify.
 
 Resources
 =========
 
-***spotify***
+***spotify_app***
 
-TODO: Describe each included resource.
+Used to install or remove the Spotify app.
 
 Syntax:
 
-    spotify 'my_resource' do
-        attribute1 'value1'
-        action :create
+    spotify_app 'default' do
+        action :install
     end
 
 Actions:
 
-| Action  | Description  |
-|---------|--------------|
-| action1 | Do something |
+| Action     | Description       |
+|------------|-------------------|
+| `:install` | Install the app   |
+| `:remove`  | Uninstall the app |
 
 Attributes:
 
-| Attribute  | Default        | Description          |
-|------------|----------------|----------------------|
-| attribute1 | `'some_value'` | Do something         |
-| action     | `:create`      | Action(s) to perform |
+| Attribute  | Default    | Description          |
+|------------|------------|----------------------|
+| action     | `:install` | Action(s) to perform |
 
 Providers
 =========
 
-TODO: Describe each included provider
+***Chef::Provider::SpotifyApp::MacOsX***
 
-***Chef::Provider::SomeProvider***
+Provider for Max OS X platforms.
+
+***Chef::Provider::SpotifyApp***
+
+A parent provider class for all the platform-specific providers to subclass.
 
 Contributing
 ============
