@@ -25,3 +25,6 @@ require_relative 'provider_spotify_app'
 Chef::Platform.set(platform: :mac_os_x,
                    resource: :spotify_app,
                    provider: Chef::Provider::SpotifyApp::MacOsX)
+Chef::Platform.set(platform: :windows,
+                   resource: :spotify_app,
+                   provider: Chef::Provider::SpotifyApp::Windows)

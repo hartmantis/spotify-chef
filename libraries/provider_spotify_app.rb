@@ -21,6 +21,7 @@
 require 'chef/provider/lwrp_base'
 require_relative 'resource_spotify_app'
 require_relative 'provider_spotify_app_mac_os_x'
+require_relative 'provider_spotify_app_windows'
 
 class Chef
   class Provider

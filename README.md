@@ -15,7 +15,7 @@ A Chef cookbook for Spotify.
 Requirements
 ============
 
-This cookbook currently supports OS X only.
+This cookbook supports both OS X and Windows.
 
 Usage
 =====
@@ -62,6 +62,10 @@ Providers
 ***Chef::Provider::SpotifyApp::MacOsX***
 
 Provider for Max OS X platforms.
+
+***Chef::Provider::SpotifyApp::Windows***
+
+Provider for Windows platforms.
 
 ***Chef::Provider::SpotifyApp***
 

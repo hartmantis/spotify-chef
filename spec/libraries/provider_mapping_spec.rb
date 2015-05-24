@@ -22,7 +22,7 @@ describe 'spotify::provider_mapping' do
     let(:platform) { :windows }
 
     it 'returns no app provider' do
-      expect(app_provider).to eq(nil)
+      expect(app_provider).to eq(Chef::Provider::SpotifyApp::Windows)
     end
   end
 
