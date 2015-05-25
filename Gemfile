@@ -23,6 +23,7 @@ group :test do
   gem 'coveralls'
   gem 'fauxhai'
   gem 'test-kitchen'
+  gem 'winrm-transport'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'
 end

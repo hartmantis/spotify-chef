@@ -1,4 +1,4 @@
-language: ruby
+language: objective-c
 
 install:
   - curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk

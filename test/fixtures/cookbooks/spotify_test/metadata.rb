@@ -1,16 +1,15 @@
 # Encoding: UTF-8
 #
 # rubocop:disable SingleSpaceBeforeFirstArg
-name             'spotify'
+name             'spotify_test'
 maintainer       'Jonathan Hartman'
 maintainer_email 'j@p4nt5.com'
 license          'apache2'
-description      'Installs Spotify'
-long_description 'Installs Spotify'
+description      'spotify_test'
+long_description 'spotify_test'
 version          '0.0.1'
 
-depends          'dmg', '~> 2.2'
-depends          'windows', '~> 1.37'
+depends          'spotify'
 
 supports         'mac_os_x'
 supports         'windows'
