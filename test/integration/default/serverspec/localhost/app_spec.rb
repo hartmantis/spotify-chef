@@ -15,7 +15,7 @@ describe 'spotify::app' do
     end
   end
 
-  describe file(File.expand_path('/Program Files (x86)/Spotify')),
+  describe file(File.expand_path('~/AppData/Roaming/Spotify')),
            if: os[:family] == 'windows' do
     it 'exists' do
       expect(subject).to be_directory

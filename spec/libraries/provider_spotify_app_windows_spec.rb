@@ -17,12 +17,12 @@ describe Chef::Provider::SpotifyApp::Windows do
 
     it 'downloads the package' do
       expect_any_instance_of(described_class).to receive(:download_package)
-      p.send(:install!)
+      provider.send(:install!)
     end
 
     it 'installs the package' do
       expect_any_instance_of(described_class).to receive(:install_package)
-      p.send(:install!)
+      provider.send(:install!)
     end
   end
 
@@ -59,7 +59,7 @@ describe Chef::Provider::SpotifyApp::Windows do
       p = provider
       expect(p).to receive(:windows_package).with('Spotify').and_yield
       expect(p).to receive(:source).with('/tmp/Spotify.exe')
-      expect(p).to receive(:installer_type).with(:unknown)
+      expect(p).to receive(:installer_type).with(:nsis)
       expect(p).to receive(:action).with(:install)
       p.send(:install_package)
     end
