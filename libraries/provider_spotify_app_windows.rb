@@ -29,7 +29,7 @@ class Chef
       # @author Jonathan Hartman <j@p4nt5.com>
       class Windows < SpotifyApp
         URL ||= 'http://download.spotify.com/Spotify.exe'
-        PATH ||= ::File.expand_path('/Program Files (x86)/Spotify')
+        PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify')
 
         private
 
