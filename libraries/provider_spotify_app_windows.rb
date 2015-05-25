@@ -27,7 +27,7 @@ class Chef
       # An provider for Spotify on Mac OS X.
       #
       # @author Jonathan Hartman <j@p4nt5.com>
-      class MacOsX < SpotifyApp
+      class Windows < SpotifyApp
         URL ||= 'http://download.spotify.com/Spotify.exe'
         PATH ||= ::File.expand_path('/Program Files (x86)/Spotify')
 
