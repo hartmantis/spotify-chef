@@ -23,3 +23,5 @@ suites:
   - name: uninstall
     run_list:
       - recipe[spotify_test::uninstall]
+    excludes:
+      - windows-8

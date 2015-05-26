@@ -45,10 +45,13 @@ Syntax:
 
 Actions:
 
-| Action     | Description       |
-|------------|-------------------|
-| `:install` | Install the app   |
-| `:remove`  | Uninstall the app |
+| Action     | Description         |
+|------------|---------------------|
+| `:install` | Install the app     |
+| `:remove`  | Uninstall the app\* |
+
+_\* The remove action is not supported under Windows--the uninstaller has no
+silent/unattended option._
 
 Attributes:
 
