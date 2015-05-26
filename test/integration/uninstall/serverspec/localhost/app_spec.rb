@@ -21,4 +21,18 @@ describe 'spotify::app' do
       expect(subject).not_to be_directory
     end
   end
+
+  describe file('/etc/apt/sources.list.d/spotify.list'),
+           if: %w(ubuntu debian).include?(os[:family]) do
+    it 'does not exist' do
+      expect(subject).not_to be_file
+    end
+  end
+
+  describe file('/usr/bin/spotify'),
+           if: %w(ubuntu debian).include?(os[:family]) do
+    it 'does not exist' do
+      expect(subject).not_to be_file
+    end
+  end
 end

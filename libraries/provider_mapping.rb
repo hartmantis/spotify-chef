@@ -28,3 +28,9 @@ Chef::Platform.set(platform: :mac_os_x,
 Chef::Platform.set(platform: :windows,
                    resource: :spotify_app,
                    provider: Chef::Provider::SpotifyApp::Windows)
+Chef::Platform.set(platform: :ubuntu,
+                   resource: :spotify_app,
+                   provider: Chef::Provider::SpotifyApp::Debian)
+Chef::Platform.set(platform: :debian,
+                   resource: :spotify_app,
+                   provider: Chef::Provider::SpotifyApp::Debian)

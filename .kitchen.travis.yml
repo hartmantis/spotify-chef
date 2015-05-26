@@ -1,8 +1,10 @@
 ---
 driver:
-  name: localhost
+  name: digitalocean
 
 platforms:
   - name: macosx
     driver:
       name: localhost
+  - name: ubuntu-14-04-x64
+  - name: debian-7-0-x64

@@ -21,13 +21,29 @@ describe 'spotify::provider_mapping' do
   context 'Windows' do
     let(:platform) { :windows }
 
-    it 'returns no app provider' do
+    it 'uses the Windows app provider' do
       expect(app_provider).to eq(Chef::Provider::SpotifyApp::Windows)
     end
   end
 
   context 'Ubuntu' do
     let(:platform) { :ubuntu }
+
+    it 'uses the Debian app provider' do
+      expect(app_provider).to eq(Chef::Provider::SpotifyApp::Debian)
+    end
+  end
+
+  context 'Debian' do
+    let(:platform) { :debian }
+
+    it 'uses the Debian app provider' do
+      expect(app_provider).to eq(Chef::Provider::SpotifyApp::Debian)
+    end
+  end
+
+  context 'CentOS' do
+    let(:platform) { :centos }
 
     it 'returns no app provider' do
       expect(app_provider).to eq(nil)

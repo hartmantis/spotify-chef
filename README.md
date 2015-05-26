@@ -15,7 +15,8 @@ A Chef cookbook for Spotify.
 Requirements
 ============
 
-This cookbook supports both OS X and Windows.
+This cookbook supports both OS X and Windows, as well as Spotify's unsupported
+packages for Ubuntu/Debian.
 
 Usage
 =====
@@ -69,6 +70,10 @@ Provider for Max OS X platforms.
 ***Chef::Provider::SpotifyApp::Windows***
 
 Provider for Windows platforms.
+
+***Chef::Provider::SpotifyApp::Debian***
+
+Provider for Ubuntu and Debian platforms.
 
 ***Chef::Provider::SpotifyApp***
 
