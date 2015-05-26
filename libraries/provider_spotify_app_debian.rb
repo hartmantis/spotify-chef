@@ -19,6 +19,7 @@
 #
 
 require 'chef/provider/lwrp_base'
+require 'chef/dsl/include_recipe'
 require_relative 'provider_spotify_app'
 
 class Chef
@@ -28,6 +29,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class Debian < SpotifyApp
+        include Chef::DSL::IncludeRecipe
+
         # No URL or PATH--everything is handled by APT
 
         private
@@ -40,13 +43,7 @@ class Chef
         # (see SpotifyApp#install!)
         #
         def install!
-          apt_repository 'spotify' do
-            uri 'http://repository.spotify.com'
-            components %w(stable non-free)
-            key '94558F59'
-            keyserver 'keyserver.ubuntu.com'
-            action :add
-          end
+          add_repo
           package 'spotify-client' do
             action :install
           end
@@ -64,6 +61,21 @@ class Chef
           end
           apt_repository 'spotify' do
             action :remove
+          end
+        end
+
+        #
+        # Configure Spotify's APT repository, making sure APT's cache is
+        # updated as well.
+        #
+        def add_repo
+          include_recipe 'apt'
+          apt_repository 'spotify' do
+            uri 'http://repository.spotify.com'
+            components %w(stable non-free)
+            key '94558F59'
+            keyserver 'keyserver.ubuntu.com'
+            action :add
           end
         end
       end
