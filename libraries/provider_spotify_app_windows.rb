@@ -44,21 +44,6 @@ class Chef
         end
 
         #
-        # Uninstall the package and cleanup whatever is left behind.
-        #
-        # (see SpotifyApp#remove!)
-        #
-        def remove!
-          windows_package 'Spotify' do
-            action :remove
-          end
-          directory PATH do
-            recursive true
-            action :delete
-          end
-        end
-
-        #
         # Use a windows_package resource to install the .exe file.
         #
         def install_package

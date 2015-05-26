@@ -14,6 +14,8 @@ platforms:
   - name: windows-8
     driver:
       box: roboticcheese/windows-8
+  - name: ubuntu-14.04
+  - name: debian-7.8
 
 suites:
   - name: default
@@ -23,3 +25,5 @@ suites:
   - name: uninstall
     run_list:
       - recipe[spotify_test::uninstall]
+    excludes:
+      - windows-8

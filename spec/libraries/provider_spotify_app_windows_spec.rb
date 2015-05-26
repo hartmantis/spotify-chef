@@ -26,26 +26,9 @@ describe Chef::Provider::SpotifyApp::Windows do
     end
   end
 
-  describe '#remove!' do
-    before(:each) do
-      [:windows_package, :directory].each do |r|
-        allow_any_instance_of(described_class).to receive(r)
-      end
-    end
-
-    it 'removes the package' do
-      p = provider
-      expect(p).to receive(:windows_package).with('Spotify').and_yield
-      expect(p).to receive(:action).with(:remove)
-      p.send(:remove!)
-    end
-
-    it 'deletes the install dir' do
-      p = provider
-      expect(p).to receive(:directory).with(described_class::PATH).and_yield
-      expect(p).to receive(:recursive).with(true)
-      expect(p).to receive(:action).with(:delete)
-      p.send(:remove!)
+  describe '#remove' do
+    it 'raises an error' do
+      expect { provider.send(:remove!) }.to raise_error(NotImplementedError)
     end
   end
 
