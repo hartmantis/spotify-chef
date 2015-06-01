@@ -10,7 +10,7 @@ before_script:
   - echo -e $DIGITALOCEAN_SSH_KEY_BODY > ~/.ssh/id_rsa
 
 script:
-  - chef exec rake && chef exec kitchen test macosx && chef exec kitchen test x64 -c 4
+  - chef exec rake && chef exec kitchen test -c 6
 
 after_script:
   - chef exec kitchen destroy
