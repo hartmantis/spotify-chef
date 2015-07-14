@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: spotify
-# Library:: provider_spotify_app_mac_os_x
+# Library:: provider_spotify_app_windows
 #
 # Copyright 2015 Jonathan Hartman
 #
@@ -30,6 +30,8 @@ class Chef
       class Windows < SpotifyApp
         URL ||= 'http://download.spotify.com/Spotify.exe'
         PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify')
+
+        provides :spotify_app, platform_family: 'windows'
 
         private
 
