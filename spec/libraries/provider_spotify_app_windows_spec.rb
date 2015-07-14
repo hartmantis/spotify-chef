@@ -8,6 +8,20 @@ describe Chef::Provider::SpotifyApp::Windows do
   let(:new_resource) { Chef::Resource::SpotifyApp.new(name, nil) }
   let(:provider) { described_class.new(new_resource, nil) }
 
+  describe '.provides?' do
+    let(:platform) { nil }
+    let(:node) { ChefSpec::Macros.stub_node('node.example', platform) }
+    let(:res) { described_class.provides?(node, new_resource) }
+
+    context 'Windows' do
+      let(:platform) { { platform: 'windows', version: '2012R2' } }
+
+      it 'returns true' do
+        expect(res).to eq(true)
+      end
+    end
+  end
+
   describe '#install!' do
     before(:each) do
       [:download_package, :install_package].each do |m|
@@ -26,7 +40,7 @@ describe Chef::Provider::SpotifyApp::Windows do
     end
   end
 
-  describe '#remove' do
+  describe '#remove!' do
     it 'raises an error' do
       expect { provider.send(:remove!) }.to raise_error(NotImplementedError)
     end

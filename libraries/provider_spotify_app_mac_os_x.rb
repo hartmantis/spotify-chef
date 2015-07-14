@@ -31,6 +31,8 @@ class Chef
         URL ||= 'http://download.spotify.com/Spotify.dmg'
         PATH ||= '/Applications/Spotify.app'
 
+        provides :spotify_app, platform_family: 'mac_os_x'
+
         private
 
         #

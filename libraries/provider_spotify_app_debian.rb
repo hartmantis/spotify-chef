@@ -33,6 +33,8 @@ class Chef
 
         # No URL or PATH--everything is handled by APT
 
+        provides :spotify_app, platform_family: 'debian'
+
         private
 
         #
