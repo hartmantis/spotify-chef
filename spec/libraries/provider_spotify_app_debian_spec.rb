@@ -55,7 +55,7 @@ describe Chef::Provider::SpotifyApp::Debian do
       expect(p).to receive(:apt_repository).with('spotify').and_yield
       expect(p).to receive(:uri).with('http://repository.spotify.com')
       expect(p).to receive(:components).with(%w(stable non-free))
-      expect(p).to receive(:key).with('94558F59')
+      expect(p).to receive(:key).with('D2C19886')
       expect(p).to receive(:keyserver).with('keyserver.ubuntu.com')
       expect(p).to receive(:action).with(:add)
       p.send(:add_repo)

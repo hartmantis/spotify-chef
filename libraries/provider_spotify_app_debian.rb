@@ -75,7 +75,7 @@ class Chef
           apt_repository 'spotify' do
             uri 'http://repository.spotify.com'
             components %w(stable non-free)
-            key '94558F59'
+            key 'D2C19886'
             keyserver 'keyserver.ubuntu.com'
             action :add
           end
