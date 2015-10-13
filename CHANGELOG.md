@@ -3,6 +3,8 @@ Spotify Cookbook CHANGELOG
 
 v?.?.? (????-??-??)
 -------------------
+- Update to newer provider resolver style
+- Update to new repo key used for Ubuntu/Debian installs
 
 v0.1.0 (2015-05-26)
 -------------------
