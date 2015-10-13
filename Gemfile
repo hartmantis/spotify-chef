@@ -27,6 +27,7 @@ group :test do
   gem 'kitchen-digitalocean'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'
+  gem 'kitchen-docker'
 end
 
 group :integration do

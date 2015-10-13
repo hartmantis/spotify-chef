@@ -1,12 +1,16 @@
 Spotify Cookbook
 ================
 [![Cookbook Version](https://img.shields.io/cookbook/v/spotify.svg)][cookbook]
-[![Build Status](https://img.shields.io/travis/RoboticCheese/spotify-chef.svg)][travis]
+[![Linux Build Status](https://img.shields.io/circleci/project/RoboticCheese/spotify-chef.svg)][circle]
+[![OS X Build Status](https://img.shields.io/travis/RoboticCheese/spotify-chef.svg)][travis]
+[![Windows Build Status](https://img.shields.io/appveyor/ci/RoboticCheese/spotify-chef.svg)][appveyor]
 [![Code Climate](https://img.shields.io/codeclimate/github/RoboticCheese/spotify-chef.svg)][codeclimate]
 [![Coverage Status](https://img.shields.io/coveralls/RoboticCheese/spotify-chef.svg)][coveralls]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/spotify
+[circle]: https://circleci.com/gh/RoboticCheese/spotify-chef
 [travis]: https://travis-ci.org/RoboticCheese/spotify-chef
+[appveyor]: https://ci.appveyor.com/project/RoboticCheese/spotify-chef
 [codeclimate]: https://codeclimate.com/github/RoboticCheese/spotify-chef
 [coveralls]: https://coveralls.io/r/RoboticCheese/spotify-chef
 
