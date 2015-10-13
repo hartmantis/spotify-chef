@@ -5,8 +5,9 @@ require_relative '../../libraries/provider_spotify_app_windows'
 
 describe Chef::Provider::SpotifyApp::Windows do
   let(:name) { 'default' }
-  let(:new_resource) { Chef::Resource::SpotifyApp.new(name, nil) }
-  let(:provider) { described_class.new(new_resource, nil) }
+  let(:run_context) { ChefSpec::SoloRunner.new.converge.run_context }
+  let(:new_resource) { Chef::Resource::SpotifyApp.new(name, run_context) }
+  let(:provider) { described_class.new(new_resource, run_context) }
 
   describe '.provides?' do
     let(:platform) { nil }
@@ -81,8 +82,9 @@ describe Chef::Provider::SpotifyApp::Windows do
 
   describe '#download_path' do
     it 'returns a path under the Chef cache dir' do
+      res = provider.send(:download_path)
       expected = "#{Chef::Config[:file_cache_path]}/Spotify.exe"
-      expect(provider.send(:download_path)).to eq(expected)
+      expect(res).to eq(expected)
     end
   end
 end
