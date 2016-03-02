@@ -3,7 +3,7 @@
 # Cookbook Name:: spotify
 # Library:: provider_spotify_app_windows
 #
-# Copyright 2015 Jonathan Hartman
+# Copyright 2015-2016, Jonathan Hartman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class Windows < SpotifyApp
-        URL ||= 'http://download.spotify.com/Spotify.exe'
-        PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify')
+        URL ||= 'http://download.spotify.com/Spotify.exe'.freeze
+        PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify').freeze
 
         provides :spotify_app, platform_family: 'windows'
 

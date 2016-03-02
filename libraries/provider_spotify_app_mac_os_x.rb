@@ -3,7 +3,7 @@
 # Cookbook Name:: spotify
 # Library:: provider_spotify_app_mac_os_x
 #
-# Copyright 2015 Jonathan Hartman
+# Copyright 2015-2016, Jonathan Hartman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class MacOsX < SpotifyApp
-        URL ||= 'http://download.spotify.com/Spotify.dmg'
-        PATH ||= '/Applications/Spotify.app'
+        URL ||= 'http://download.spotify.com/Spotify.dmg'.freeze
+        PATH ||= '/Applications/Spotify.app'.freeze
 
         provides :spotify_app, platform_family: 'mac_os_x'
 

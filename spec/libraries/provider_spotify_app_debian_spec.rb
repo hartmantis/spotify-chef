@@ -32,8 +32,8 @@ describe Chef::Provider::SpotifyApp::Debian do
     it 'configures the Spotify APT repo and installs the package' do
       p = provider
       expect(p).to receive(:add_repo)
-      expect(p).to receive(:package).with('spotify-client').and_yield
-      expect(p).to receive(:action).with(:install)
+      expect(p).to receive(:package).with('xdg-utils')
+      expect(p).to receive(:package).with('spotify-client')
       p.send(:install!)
     end
   end
