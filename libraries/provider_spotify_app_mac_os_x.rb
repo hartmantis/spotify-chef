@@ -28,8 +28,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class MacOsX < SpotifyApp
-        URL ||= 'http://download.spotify.com/Spotify.dmg'
-        PATH ||= '/Applications/Spotify.app'
+        URL ||= 'http://download.spotify.com/Spotify.dmg'.freeze
+        PATH ||= '/Applications/Spotify.app'.freeze
 
         provides :spotify_app, platform_family: 'mac_os_x'
 

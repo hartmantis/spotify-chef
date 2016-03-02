@@ -1,6 +1,5 @@
 # Encoding: UTF-8
-#
-# rubocop:disable SingleSpaceBeforeFirstArg
+
 name             'spotify'
 maintainer       'Jonathan Hartman'
 maintainer_email 'j@p4nt5.com'
@@ -17,4 +16,3 @@ supports         'mac_os_x'
 supports         'windows'
 supports         'ubuntu'
 supports         'debian'
-# rubocop:enable SingleSpaceBeforeFirstArg

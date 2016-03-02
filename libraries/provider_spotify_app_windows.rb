@@ -28,8 +28,8 @@ class Chef
       #
       # @author Jonathan Hartman <j@p4nt5.com>
       class Windows < SpotifyApp
-        URL ||= 'http://download.spotify.com/Spotify.exe'
-        PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify')
+        URL ||= 'http://download.spotify.com/Spotify.exe'.freeze
+        PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify').freeze
 
         provides :spotify_app, platform_family: 'windows'
 
