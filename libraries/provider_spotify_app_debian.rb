@@ -46,9 +46,8 @@ class Chef
         #
         def install!
           add_repo
-          package 'spotify-client' do
-            action :install
-          end
+          package 'xdg-utils'
+          package 'spotify-client'
         end
 
         #
