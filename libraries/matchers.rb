@@ -21,7 +21,7 @@
 if defined?(ChefSpec)
   ChefSpec.define_matcher(:spotify_app)
 
-  [:install, :remove].each do |a|
+  %i(install remove).each do |a|
     define_method("#{a}_spotify_app") do |name|
       ChefSpec::Matchers::ResourceMatcher.new(:spotify_app, a, name)
     end

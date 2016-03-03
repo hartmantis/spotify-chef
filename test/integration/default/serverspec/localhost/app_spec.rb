@@ -2,7 +2,7 @@
 
 require_relative '../spec_helper'
 
-describe 'spotify::app' do
+describe 'spotify::default::app' do
   describe file('/Applications/Spotify.app'), if: os[:family] == 'darwin' do
     it 'exists' do
       expect(subject).to be_directory
@@ -29,10 +29,10 @@ describe 'spotify::app' do
     end
   end
 
-  describe file('/usr/bin/spotify'),
+  describe package('spotify-client'),
            if: %w(ubuntu debian).include?(os[:family]) do
-    it 'exists and is executable' do
-      expect(subject).to be_executable
+    it 'is installed' do
+      expect(subject).to be_installed
     end
   end
 end
