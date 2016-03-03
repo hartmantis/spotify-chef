@@ -1,9 +1,8 @@
 Spotify Cookbook CHANGELOG
 ==========================
 
-Unreleased
-----------
-- Update to newer provider resolver style
+v1.0.0 (2016-03-03)
+-------------------
 - Update to new repo key used for Ubuntu/Debian installs
 - Bump apt dependency from 2.x to 3.x
 - Forcibly install the xdg-utils dependency on Debian platforms
