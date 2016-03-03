@@ -1,7 +1,7 @@
 # Encoding: UTF-8
 #
 # Cookbook Name:: spotify
-# Library:: resource_spotify_app
+# Library:: resource_spotify_app_windows
 #
 # Copyright 2015-2016, Jonathan Hartman
 #
@@ -18,20 +18,26 @@
 # limitations under the License.
 #
 
-require 'chef/resource'
+require_relative 'resource_spotify_app'
 
 class Chef
   class Resource
-    # A Chef resource for the Spotify app.
+    # A Windows implementation of the spotify_app resource.
     #
     # @author Jonathan Hartman <j@p4nt5.com>
-    class SpotifyApp < Resource
-      default_action :install
+    class SpotifyAppWindows < SpotifyApp
+      URL ||= 'http://download.spotify.com/Spotify.exe'.freeze
+      PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify').freeze
 
-      %w(install remove).each do |a|
-        action a do
-          raise(NotImplementedError,
-                "Action '#{a}' must be implemented for '#{self.class}'")
+      provides :spotify_app, platform_family: 'windows'
+
+      #
+      # Use a windows_package resource to install Spotify.
+      #
+      action :install do
+        windows_package 'Spotify' do
+          source URL
+          installer_type :nsis
         end
       end
     end
