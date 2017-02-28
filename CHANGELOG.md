@@ -3,6 +3,7 @@ Spotify Cookbook CHANGELOG
 
 Unreleased
 ----------
+- Remove dependency on the apt cookbook
 
 v1.0.0 (2016-03-03)
 -------------------

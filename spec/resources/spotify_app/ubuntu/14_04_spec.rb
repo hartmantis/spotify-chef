@@ -15,10 +15,6 @@ describe 'resource_spotify_app::ubuntu::14_04' do
     let(:action) { :default }
     cached(:chef_run) { converge }
 
-    it 'includes the apt default recipe' do
-      expect(chef_run).to include_recipe('apt')
-    end
-
     it 'configures the Spotify apt repo' do
       expect(chef_run).to add_apt_repository('spotify')
         .with(uri: 'http://repository.spotify.com',

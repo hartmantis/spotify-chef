@@ -37,7 +37,6 @@ class Chef
       #   https://www.spotify.com/us/download/previews
       #
       action :install do
-        include_recipe 'apt'
         apt_repository 'spotify' do
           uri 'http://repository.spotify.com'
           components %w(stable non-free)
@@ -53,12 +52,8 @@ class Chef
       # safe since it's strictly a repo for Spotify packages).
       #
       action :remove do
-        package 'spotify-client' do
-          action :remove
-        end
-        apt_repository 'spotify' do
-          action :remove
-        end
+        package('spotify-client') { action :remove }
+        apt_repository('spotify') { action :remove }
       end
     end
   end
