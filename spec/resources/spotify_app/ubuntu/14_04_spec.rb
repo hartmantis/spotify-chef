@@ -1,3 +1,6 @@
+# encoding: utf-8
+# frozen_string_literal: true
+
 require_relative '../../../spec_helper'
 
 describe 'resource_spotify_app::ubuntu::14_04' do
