@@ -5,6 +5,7 @@ Unreleased
 ----------
 - Remove dependency on the apt cookbook
 - Remove dependency on the windows cookbook
+- Update dependency on the dmg cookbook
 
 v1.0.0 (2016-03-03)
 -------------------

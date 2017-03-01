@@ -13,7 +13,7 @@ chef_version '>= 12.9'
 source_url 'https://github.com/roboticcheese/spotify-chef'
 issues_url 'https://github.com/roboticcheese/spotify-chef/issues'
 
-depends 'dmg', '~> 2.2'
+depends 'dmg', '~> 3.1'
 
 supports 'mac_os_x'
 supports 'windows'
