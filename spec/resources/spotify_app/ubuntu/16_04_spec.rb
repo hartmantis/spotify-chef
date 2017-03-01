@@ -3,10 +3,10 @@
 
 require_relative '../ubuntu'
 
-describe 'resources::spotify_app::ubuntu::14_04' do
+describe 'resources::spotify_app::ubuntu::16_04' do
   include_context 'resources::spotify_app::ubuntu'
 
-  let(:platform_version) { '14.04' }
+  let(:platform_version) { '16.04' }
 
   it_behaves_like 'any Ubuntu platform'
 end

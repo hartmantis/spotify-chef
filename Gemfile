@@ -22,9 +22,7 @@ group :test do
   gem 'coveralls'
   gem 'fauxhai'
   gem 'test-kitchen'
-  gem 'winrm-transport'
   gem 'winrm-fs'
-  gem 'kitchen-digitalocean'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'
   gem 'kitchen-docker'
@@ -39,6 +37,6 @@ group :deploy do
 end
 
 group :production do
-  gem 'chef', '>= 11'
+  gem 'chef', '>= 12.9'
   gem 'berkshelf'
 end
