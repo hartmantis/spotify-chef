@@ -17,6 +17,7 @@ shared_context 'resources::spotify_app::debian' do
       it 'configures the Spotify apt repo' do
         expect(chef_run).to add_apt_repository('spotify')
           .with(uri: 'http://repository.spotify.com',
+                distribution: nil,
                 components: %w(stable non-free),
                 key: 'D2C19886',
                 keyserver: 'keyserver.ubuntu.com')

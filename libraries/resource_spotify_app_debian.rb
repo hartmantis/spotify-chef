@@ -40,6 +40,7 @@ class Chef
       action :install do
         apt_repository 'spotify' do
           uri 'http://repository.spotify.com'
+          distribution nil
           components %w(stable non-free)
           key 'D2C19886'
           keyserver 'keyserver.ubuntu.com'
