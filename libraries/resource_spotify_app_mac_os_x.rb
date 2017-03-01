@@ -27,9 +27,6 @@ class Chef
     #
     # @author Jonathan Hartman <j@p4nt5.com>
     class SpotifyAppMacOsX < SpotifyApp
-      URL ||= 'http://download.spotify.com/Spotify.dmg'.freeze
-      PATH ||= '/Applications/Spotify.app'.freeze
-
       provides :spotify_app, platform_family: 'mac_os_x'
 
       #
@@ -37,7 +34,7 @@ class Chef
       #
       action :install do
         dmg_package 'Spotify' do
-          source URL
+          source 'http://download.spotify.com/Spotify.dmg'
         end
       end
 
@@ -47,7 +44,7 @@ class Chef
       #
       action :remove do
         [
-          PATH,
+          '/Applications/Spotify.app',
           ::File.expand_path('~/Library/Application Support/Spotify'),
           ::File.expand_path('~/Library/Logs/Spotify')
         ].each do |d|
