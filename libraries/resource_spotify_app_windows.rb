@@ -36,7 +36,7 @@ class Chef
       # Use a windows_package resource to install Spotify.
       #
       action :install do
-        windows_package 'Spotify' do
+        package 'Spotify' do
           source URL
           installer_type :nsis
         end

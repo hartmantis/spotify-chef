@@ -14,7 +14,6 @@ source_url 'https://github.com/roboticcheese/spotify-chef'
 issues_url 'https://github.com/roboticcheese/spotify-chef/issues'
 
 depends 'dmg', '~> 2.2'
-depends 'windows', '~> 1.37'
 
 supports 'mac_os_x'
 supports 'windows'

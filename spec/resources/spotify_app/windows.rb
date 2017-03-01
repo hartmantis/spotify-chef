@@ -15,7 +15,7 @@ shared_context 'resources::spotify_app::windows' do
       include_context description
 
       it 'installs the Spotify package' do
-        expect(chef_run).to install_windows_package('Spotify')
+        expect(chef_run).to install_package('Spotify')
           .with(source: 'http://download.spotify.com/Spotify.exe',
                 installer_type: :nsis)
       end
