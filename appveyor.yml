@@ -14,4 +14,4 @@ build_script:
   - copy .kitchen.appveyor.yml .kitchen.local.yml
 
 test_script:
-  - chef exec kitchen test
+  - chef exec bundle exec kitchen test

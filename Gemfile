@@ -1,32 +1,30 @@
-# Encoding: UTF-8
+# encoding: utf-8
+# frozen_string_literal: true
 
 source 'https://rubygems.org'
 
 group :development do
-  gem 'yard-chef'
   gem 'guard'
   gem 'guard-foodcritic'
-  gem 'guard-rspec'
   gem 'guard-kitchen'
+  gem 'guard-rspec'
+  gem 'yard-chef'
 end
 
 group :test do
-  gem 'rake'
-  gem 'rubocop'
-  gem 'foodcritic'
-  gem 'rspec'
   gem 'chefspec'
-  gem 'simplecov'
-  gem 'simplecov-console'
   gem 'coveralls'
-  gem 'fauxhai'
-  gem 'test-kitchen'
-  gem 'winrm-transport'
-  gem 'winrm-fs'
-  gem 'kitchen-digitalocean'
+  gem 'foodcritic'
+  gem 'kitchen-docker'
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'
-  gem 'kitchen-docker'
+  gem 'rake'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'simplecov'
+  gem 'simplecov-console'
+  gem 'test-kitchen'
+  gem 'winrm-fs'
 end
 
 group :integration do
@@ -38,6 +36,6 @@ group :deploy do
 end
 
 group :production do
-  gem 'chef', '>= 11'
   gem 'berkshelf'
+  gem 'chef', '>= 12.9'
 end

@@ -1,9 +1,10 @@
-# Encoding: UTF-8
+# encoding: utf-8
+# frozen_string_literal: true
 #
 # Cookbook Name:: spotify
 # Library:: resource_spotify_app_windows
 #
-# Copyright 2015-2016, Jonathan Hartman
+# Copyright 2015-2017, Jonathan Hartman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,17 +27,14 @@ class Chef
     #
     # @author Jonathan Hartman <j@p4nt5.com>
     class SpotifyAppWindows < SpotifyApp
-      URL ||= 'http://download.spotify.com/Spotify.exe'.freeze
-      PATH ||= ::File.expand_path('~/AppData/Roaming/Spotify').freeze
-
       provides :spotify_app, platform_family: 'windows'
 
       #
       # Use a windows_package resource to install Spotify.
       #
       action :install do
-        windows_package 'Spotify' do
-          source URL
+        package 'Spotify' do
+          source 'http://download.spotify.com/Spotify.exe'
           installer_type :nsis
         end
       end

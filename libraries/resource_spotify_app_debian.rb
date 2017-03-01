@@ -1,9 +1,10 @@
-# Encoding: UTF-8
+# encoding: utf-8
+# frozen_string_literal: true
 #
 # Cookbook Name:: spotify
 # Library:: resource_spotify_app_debian
 #
-# Copyright 2015-2016, Jonathan Hartman
+# Copyright 2015-2017, Jonathan Hartman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,9 +38,9 @@ class Chef
       #   https://www.spotify.com/us/download/previews
       #
       action :install do
-        include_recipe 'apt'
         apt_repository 'spotify' do
           uri 'http://repository.spotify.com'
+          distribution nil
           components %w(stable non-free)
           key 'D2C19886'
           keyserver 'keyserver.ubuntu.com'
@@ -53,12 +54,8 @@ class Chef
       # safe since it's strictly a repo for Spotify packages).
       #
       action :remove do
-        package 'spotify-client' do
-          action :remove
-        end
-        apt_repository 'spotify' do
-          action :remove
-        end
+        package('spotify-client') { action :remove }
+        apt_repository('spotify') { action :remove }
       end
     end
   end

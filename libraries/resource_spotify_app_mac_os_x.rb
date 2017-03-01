@@ -1,9 +1,10 @@
-# Encoding: UTF-8
+# encoding: utf-8
+# frozen_string_literal: true
 #
 # Cookbook Name:: spotify
 # Library:: resource_spotify_app_mac_os_x
 #
-# Copyright 2015-2016, Jonathan Hartman
+# Copyright 2015-2017, Jonathan Hartman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,9 +27,6 @@ class Chef
     #
     # @author Jonathan Hartman <j@p4nt5.com>
     class SpotifyAppMacOsX < SpotifyApp
-      URL ||= 'http://download.spotify.com/Spotify.dmg'.freeze
-      PATH ||= '/Applications/Spotify.app'.freeze
-
       provides :spotify_app, platform_family: 'mac_os_x'
 
       #
@@ -36,7 +34,7 @@ class Chef
       #
       action :install do
         dmg_package 'Spotify' do
-          source URL
+          source 'http://download.spotify.com/Spotify.dmg'
         end
       end
 
@@ -46,7 +44,7 @@ class Chef
       #
       action :remove do
         [
-          PATH,
+          '/Applications/Spotify.app',
           ::File.expand_path('~/Library/Application Support/Spotify'),
           ::File.expand_path('~/Library/Logs/Spotify')
         ].each do |d|
