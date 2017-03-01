@@ -8,7 +8,7 @@ shared_context 'resources::spotify_app' do
 
   let(:resource) { 'spotify_app' }
   %i(source).each { |p| let(p) { nil } }
-  let(:properties) { { } }
+  let(:properties) { {} }
   let(:name) { 'default' }
 
   shared_context 'the :install action' do

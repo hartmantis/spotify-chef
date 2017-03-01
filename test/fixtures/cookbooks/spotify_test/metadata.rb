@@ -9,4 +9,4 @@ description 'spotify_test'
 long_description 'spotify_test'
 version '0.0.1'
 
-depends          'spotify'
+depends 'spotify'
